@@ -8,9 +8,12 @@ from bs4 import BeautifulSoup
 class MALSpider(CrawlSpider):
     name = 'MyAnimeList'
     allowed_domains = ['myanimelist.net']
-    denied_domains = ['https://myanimelist.net/membership?utm_source=myanimelist&utm_medium=banner&utm_campaign=support_mal_20200416&utm_content=minibanner']
+    denied_domains = ["membership","mangalist","forum","blog"]
     start_urls = [
-        'https://myanimelist.net/topanime.php?type=bypopularity'
+        'https://myanimelist.net/topanime.php?type=bypopularity',
+        'https://myanimelist.net/topmanga.php',
+        'https://myanimelist.net/people.php',
+        'https://myanimelist.net/character.php'
     ]
 
     rules = [
